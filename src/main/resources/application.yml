@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: TestPrvt
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/PR_DB
+    username: postgres
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: create
+  springdoc:
+    api-docs:
+      path: /api-docs
+server:
+  servlet:
+    context-path: /api
