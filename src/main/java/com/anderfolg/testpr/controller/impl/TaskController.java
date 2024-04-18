@@ -57,5 +57,11 @@ public class TaskController implements TaskControllerSpec {
     public ResponseEntity<Task> updateTaskStatus( @PathVariable Long id, @RequestParam Status status) {
         return ResponseEntity.ok(taskService.updateTaskStatus(id, status));
     }
+
+    @Override
+    public ResponseEntity<Task> deleteTask( Long id ) {
+        taskService.deleteTask(id);
+        return ResponseEntity.ok().build();
+    }
 }
 

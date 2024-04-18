@@ -61,6 +61,13 @@ public interface TaskControllerSpec {
                     @ApiResponse(responseCode = "400", description = "Bad request (e.g., invalid status)"),
                     @ApiResponse(responseCode = "404", description = "Task not found")})
     ResponseEntity<Task> updateTaskStatus( @PathVariable Long id, @RequestParam Status status);
+
+    @Operation(summary = "Delete Task",
+            description = "Deletes the existing task.",
+            tags = {"tasks", "delete"},
+            responses = {@ApiResponse(responseCode = "200", description = "Task status deleted", content = @Content(mediaType = "application/json", schema = @Schema(implementation = Task.class))),
+                    @ApiResponse(responseCode = "404", description = "Task not found")})
+    ResponseEntity<Task> deleteTask( @PathVariable Long id);
 }
 
 
